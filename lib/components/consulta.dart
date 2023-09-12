@@ -10,6 +10,7 @@ class ConsultaAluno extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
+      shrinkWrap: true,
         physics: const AlwaysScrollableScrollPhysics(),
         children: alunoControl.getAll
             .where((aluno) => nome == null || nome!.isEmpty || aluno.nome.toLowerCase().startsWith(nome!.toLowerCase()))

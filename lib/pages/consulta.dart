@@ -52,8 +52,7 @@ class _ConsultaPageState extends State<ConsultaPage> {
                     icon: const Icon(Icons.person_search),
                     label: const Text("Buscar nome ou RA")
                   ),
-                  SizedBox(
-                    height: 300,
+                  Expanded(
                     child: ConsultaAluno(nome: nome, ra: ra)
                   )
                 ],
