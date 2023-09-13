@@ -31,9 +31,9 @@ class Layout extends Scaffold {
             onPressed: () => Navigator.of(context).pushNamed("/consulta"),
           )),
         BottomNavigationBarItem(
-          label: "Consulta",
+          label: "Alunos",
           icon: IconButton(
-            icon: const Icon(Icons.search),
+            icon: const Icon(Icons.list),
             onPressed: () => Navigator.of(context).pushNamed("/lista"),
           ))
       ])

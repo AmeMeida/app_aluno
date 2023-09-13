@@ -10,12 +10,14 @@ class ConsultaAluno extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      shrinkWrap: true,
+        shrinkWrap: true,
         physics: const AlwaysScrollableScrollPhysics(),
-        children: alunoControl.getAll
-            .where((aluno) => nome == null || nome!.isEmpty || aluno.nome.toLowerCase().startsWith(nome!.toLowerCase()))
-            .map((aluno) =>
-                ListTile(leading: Text(aluno.ra), title: Text(aluno.nome)))
+        children: alunoControl
+            .findByNomeRa(nome, ra)
+            .map((aluno) => ListTile(
+                leading: const Icon(Icons.person),
+                title: Text(aluno.nome),
+                subtitle: Text(aluno.ra)))
             .toList());
   }
 }
