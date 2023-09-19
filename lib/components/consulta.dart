@@ -11,7 +11,7 @@ class ConsultaAluno extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      shrinkWrap: true,
+        shrinkWrap: true,
         physics: const AlwaysScrollableScrollPhysics(),
         children: alunoControl.getAll
             .where((aluno) {
