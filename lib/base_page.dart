@@ -29,12 +29,6 @@ class Layout extends Scaffold {
           icon: IconButton(
             icon: const Icon(Icons.search),
             onPressed: () => Navigator.of(context).pushNamed("/consulta"),
-          )),
-        BottomNavigationBarItem(
-          label: "Consulta",
-          icon: IconButton(
-            icon: const Icon(Icons.search),
-            onPressed: () => Navigator.of(context).pushNamed("/lista"),
           ))
       ])
   );

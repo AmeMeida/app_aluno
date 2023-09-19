@@ -1,7 +1,6 @@
 import 'package:cadastro_aluno/pages/cadastro.dart';
 import 'package:cadastro_aluno/pages/consulta.dart';
 import 'package:cadastro_aluno/pages/home.dart';
-import 'package:cadastro_aluno/pages/lista.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,9 +22,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => const HomePage(),
         "/cadastro": (context) => const CadastroPage(),
-        "/consulta": (context) => const ConsultaPage(),
-        "/lista": (context) => const ListaPage()
-      },
+        "/consulta": (context) => const ConsultaPage()
+      }
     );
   }
 }

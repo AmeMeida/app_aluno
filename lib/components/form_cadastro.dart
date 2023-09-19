@@ -50,7 +50,7 @@ class _FormCadastroState extends State<FormCadastro> {
                 return "Insira um RA.";
               }
 
-              if (value.length == 6) {
+              if (value.length != 6) {
                 return "Um RA válido deve ter 6 caracteres.";
               }
 
