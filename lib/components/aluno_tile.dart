@@ -2,6 +2,7 @@ import 'package:cadastro_aluno/controller/user_controller.dart';
 import 'package:cadastro_aluno/model/user.dart';
 import 'package:cadastro_aluno/pages/alterar.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class AlunoTile extends StatelessWidget {
   final Aluno aluno;
@@ -11,23 +12,23 @@ class AlunoTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      leading: Text(aluno.ra),
-      title: Text(aluno.nome),
-      trailing: SizedBox(
-          width: 80,
-          child: Row(
-            children: [
-              IconButton(
-                  onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => AlterarPage(aluno: aluno))),
-                  icon: const Icon(Icons.edit)),
-              IconButton(
-                  onPressed: () => alunoControl.remover(aluno),
-                  icon: const Icon(Icons.delete)),
-            ],
-          )),
-    );
+        leading: Text(aluno.ra),
+        title: Text(aluno.nome),
+        trailing: SizedBox(
+            width: 80,
+            child: Row(
+              children: [
+                IconButton(
+                    onPressed: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => AlterarPage(aluno: aluno))),
+                    icon: const Icon(Icons.edit)),
+                IconButton(
+                    onPressed: () => Provider.of<AlunoController>(context, listen: false).remover(aluno),
+                    icon: const Icon(Icons.delete)),
+              ],
+            )),
+      );
   }
 }

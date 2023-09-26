@@ -1,9 +1,13 @@
 import 'package:cadastro_aluno/model/user.dart';
+import 'package:flutter/material.dart';
 
-class AlunoController {
+class AlunoController with ChangeNotifier {
   final List<Aluno> _alunos = List.from(alunosExemplo);
 
-  void cadastrar(Aluno aluno) => _alunos.add(aluno);
+  void cadastrar(Aluno aluno) {
+    _alunos.add(aluno);
+    notifyListeners();
+  } 
 
   List<Aluno> get getAll => _alunos;
 
@@ -11,10 +15,12 @@ class AlunoController {
 
   void remover(Aluno al) {
     _alunos.remove(al);
+    notifyListeners();
   }
 
   void atualizar(Aluno anterior, Aluno novo) {
     _alunos[_alunos.indexOf(anterior)] = novo;
+    notifyListeners();
   }
 }
 
@@ -39,7 +45,10 @@ const alunosExemplo = [
   Aluno(nome: "wnk", ra: "201308"),
   Aluno(nome: "wnk", ra: "201308"),
   Aluno(nome: "wnk", ra: "201308"),
-  Aluno(nome: "wnk", ra: "201308")
+  Aluno(nome: "wnk", ra: "201308"),
+  Aluno(nome: "cat", ra: "201171"),
+  Aluno(nome: "cat", ra: "201171"),
+  Aluno(nome: "cat", ra: "201171"),
+  Aluno(nome: "cat", ra: "201171"),
+  Aluno(nome: "cat", ra: "201171"),
 ];
-
-final alunoControl = AlunoController();

@@ -1,6 +1,7 @@
 import 'package:cadastro_aluno/controller/user_controller.dart';
 import 'package:cadastro_aluno/model/user.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class FormCadastro extends StatefulWidget {
   const FormCadastro({super.key});
@@ -16,6 +17,8 @@ class _FormCadastroState extends State<FormCadastro> {
 
   @override
   Widget build(BuildContext context) {
+    final alunoControl = Provider.of<AlunoController>(context, listen: false);
+
     return Form(
       key: key,
       child: Column(

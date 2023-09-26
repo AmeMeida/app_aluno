@@ -1,10 +1,16 @@
+import 'package:cadastro_aluno/controller/user_controller.dart';
 import 'package:cadastro_aluno/pages/cadastro.dart';
 import 'package:cadastro_aluno/pages/consulta.dart';
 import 'package:cadastro_aluno/pages/home.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => AlunoController(),
+      child: const MyApp())
+    );
 }
 
 class MyApp extends StatelessWidget {
