@@ -21,14 +21,16 @@ class _ConsultaPageState extends State<ConsultaPage> {
   Widget build(BuildContext context) {
     return Layout(context, title: "Consulta",
       content: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 8),
         child: Form(
               key: key,
               child: Column(
                 children: [
                   TextFormField(
                     controller: nomeController,
+                    onChanged: (value) => setState(() => nome = value),
                     decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.search),
                       labelText: "Nome",
                       border: OutlineInputBorder()
                     ),
@@ -36,7 +38,9 @@ class _ConsultaPageState extends State<ConsultaPage> {
                   const SizedBox(height: 8),
                   TextFormField(
                     controller: raController,
+                    onChanged: (value) => setState(() => ra = value),
                     decoration: const InputDecoration(
+                      prefixIcon: Icon(Icons.search_off_outlined),
                       labelText: "RA",
                       border: OutlineInputBorder()
                     ),
